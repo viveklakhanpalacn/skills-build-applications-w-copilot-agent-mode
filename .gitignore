@@ -21,8 +21,7 @@ node_modules
 venv/
 /octofit-tracker/backend/venv/
 
-# OctoFit tracker app
-octofit-tracker/
+# OctoFit tracker app (keep project files tracked; backend venv is ignored explicitly below)
 
 # Node.js
 node_modules/

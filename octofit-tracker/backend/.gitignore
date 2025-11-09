@@ -1,0 +1,8 @@
+# Ignore local virtualenv for backend
+venv/
+venv
+__pycache__/
+.pytest_cache/
+
+# DB file for local dev
+db.sqlite3
