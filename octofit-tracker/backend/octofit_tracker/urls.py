@@ -1,9 +1,20 @@
-"""Minimal URLconf for OctoFit Tracker."""
+
+"""URLconf for OctoFit Tracker API."""
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from .views import UserViewSet, TeamViewSet, ActivityViewSet, WorkoutViewSet, LeaderboardViewSet, api_root
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'teams', TeamViewSet)
+router.register(r'activities', ActivityViewSet)
+router.register(r'workouts', WorkoutViewSet)
+router.register(r'leaderboard', LeaderboardViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # DRF browsable API login/logout
     path('api-auth/', include('rest_framework.urls')),
+    path('api/', include(router.urls)),
+    path('', api_root, name='api-root'),
 ]

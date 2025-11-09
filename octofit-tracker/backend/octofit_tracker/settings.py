@@ -24,9 +24,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # REST framework
     'rest_framework',
+    'djongo',
+    'octofit_tracker',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,11 +60,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
 
-# Use SQLite for local development
+# Use Djongo for MongoDB
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'octofit_db',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+        },
     }
 }
 
@@ -75,6 +84,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_METHODS = ['*']
+ALLOWED_HOSTS = ['*']
+
+AUTH_USER_MODEL = 'octofit_tracker.User'
 # Minimal DRF settings (can be extended later)
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
