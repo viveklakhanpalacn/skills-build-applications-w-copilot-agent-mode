@@ -1,0 +1,90 @@
+
+body {
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  color: #222;
+}
+
+.App {
+  text-align: center;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.navbar-brand, .nav-link {
+  color: #fff !important;
+  font-weight: 600;
+}
+.navbar-brand img {
+  height: 40px;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #007bff;
+  font-weight: 700;
+}
+
+.card {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-radius: 12px;
+}
+.card-header {
+  font-size: 1.25rem;
+}
+
+.table {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.table-dark th {
+  background: #007bff;
+  color: #fff;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background: #e9f5ff;
+}
+
+.btn-primary, .btn-success, .btn-info, .btn-secondary, .btn-warning {
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.btn-primary {
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  border: none;
+}
+.btn-success {
+  background: linear-gradient(90deg, #28a745 0%, #00c6ff 100%);
+  border: none;
+}
+.btn-info {
+  background: linear-gradient(90deg, #17a2b8 0%, #00c6ff 100%);
+  border: none;
+}
+.btn-secondary {
+  background: linear-gradient(90deg, #6c757d 0%, #00c6ff 100%);
+  border: none;
+}
+.btn-warning {
+  background: linear-gradient(90deg, #ffc107 0%, #00c6ff 100%);
+  border: none;
+  color: #222;
+}
+
+.App-link {
+  color: #00c6ff;
+  text-decoration: underline;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
